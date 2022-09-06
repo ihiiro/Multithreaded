@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='uniform/css/base.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="{{ url_for('test') }}">
+          <span class="brand-title"><span class="multi">Multi</span><span class="threaded">Threaded</span></span>
+        </a>
+      </nav>
+    </header>
+    <main>
+      <article>
+        {% block content %}{% endblock %}
+      </article>
+    </main>
+    <footer>
+      2022 - {{ current_year }}
+      <address>
+        For business inquiries: kelkholium@gmail.com
+      </address>
+    </footer>
+  </body>
+</html>
