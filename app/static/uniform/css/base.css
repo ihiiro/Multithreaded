@@ -25,14 +25,14 @@ nav {
 body {
   margin: 0;
   background-color: rgb(4, 19, 33);
-  margin-top: 15em;
+  margin-top: 25em;
 }
 header {
   background-color: rgb(255, 238, 0);
   position: fixed;
   top: 0;
   right: 0;
-  left: 0;
+  left: 0; 
 }
 article {
   display: flex;
@@ -59,4 +59,13 @@ h1 {
 h6 {
   color: rgb(255, 238, 0);
   margin-top: 0;
+}
+a.home-top, a.home-bottom {
+  color: #fff;
+  font-size: 5em;
+  font-family: sans-serif, helvetica;
+  padding: 30px;
+}
+a.home-bottom {
+  float: right;
 }

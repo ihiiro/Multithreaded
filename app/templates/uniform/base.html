@@ -15,9 +15,15 @@
       </nav>
     </header>
     <main>
+      {% if not '/home' in request_url %}
+      <a href="/home" class="home-top">HOME &lt&lt&lt&lt</a>
+      {% endif %}
       <article>
         {% block content %}{% endblock %}
       </article>
+      {% if not '/home' in request_url %}
+      <a href="/home" class="home-bottom">&gt&gt&gt&gt HOME</a>
+      {% endif %}
     </main>
     <footer>
       2022 - {{ current_year }}
