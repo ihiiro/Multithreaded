@@ -8,11 +8,15 @@ computer science concepts.
 
 {% block content %}
 <div class="articles">
-  <div class="article" style="background-image: url('{{ url_for('static', filename='media/test_article.jpg') }}');">
-    <h2 class="article-title"><a href="#">An overview of operating systems</a></h2>
-  </div>
-  <div class="article" style="background-image: url('{{ url_for('static', filename='media/test_article.jpg') }}');">
-    <h2 class="article-title"><a href="#">An overview of operating systems</a></h2>
-  </div>
+  <a href="#">
+    <div class="article" style="background-image: url('{{ url_for('static', filename='media/test_article.jpg') }}');">
+      <h2 class="article-title">An overview of operating systems</h2>
+    </div>
+  </a>
+  <a href="#">
+    <div class="article" style="background-image: url('{{ url_for('static', filename='media/test_article.jpg') }}');">
+      <h2 class="article-title">An overview of operating systems</h2>
+    </div>
+  </a>
 </div>
 {% endblock %}

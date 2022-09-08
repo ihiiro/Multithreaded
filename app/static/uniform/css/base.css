@@ -76,7 +76,7 @@ a.home-bottom {
 div.articles {
   word-wrap: break-word;
 }
-div.articles > div.article {
+div.articles > a > div.article {
   margin: 0 auto;
   width: 85%;
   padding: 10px;
@@ -84,7 +84,7 @@ div.articles > div.article {
   margin-top: 200px;
   border-left: 5px solid rgb(255, 238, 0);
 }
-div.articles > div.article > h2.article-title {
+div.articles > a > div.article > h2.article-title {
   color: #fff;
   font-family: sans-serif, helvetica;
   font-size: 6em;
