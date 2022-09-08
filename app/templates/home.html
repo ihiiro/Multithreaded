@@ -1,1 +1,18 @@
 {% extends 'uniform/base.html' %}
+
+{% block description %}MultiThreaded is an educational platform focused on
+computer science concepts.
+{% endblock %}
+
+{% block title %}MultiThreaded: Computer Science made accessible{% endblock %}
+
+{% block content %}
+<div class="articles">
+  <div class="article" style="background-image: url('{{ url_for('static', filename='media/test_article.jpg') }}');">
+    <h2 class="article-title"><a href="#">An overview of operating systems</a></h2>
+  </div>
+  <div class="article" style="background-image: url('{{ url_for('static', filename='media/test_article.jpg') }}');">
+    <h2 class="article-title"><a href="#">An overview of operating systems</a></h2>
+  </div>
+</div>
+{% endblock %}
