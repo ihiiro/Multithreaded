@@ -9,18 +9,23 @@
   <body>
     <header>
       <nav>
-        <a href="{{ url_for('test') }}">
+        <a href="{{ url_for('home', num=1) }}">
           <span class="brand-title"><span class="multi">Multi</span><span class="threaded">Threaded</span></span>
         </a>
       </nav>
     </header>
     <main>
       {% if not '/home' in request_url %}
-      <a href="/home" class="home-top">HOME &lt&lt&lt&lt</a>
+      <a href="{{ url_for('home', num=1) }}" class="home-top">HOME &lt&lt&lt&lt</a>
       {% endif %}
       {% block content %}{% endblock %}
+      {% if 'home' in request_url %}
+      <div class="index-bar">
+        <a href="{{ url_for('home', num=1) }}">1</a>
+      </div>
+      {% endif %}
       {% if not '/home' in request_url %}
-      <a href="/home" class="home-bottom">&gt&gt&gt&gt HOME</a>
+      <a href="{{ url_for('home', num=1) }}" class="home-bottom">&gt&gt&gt&gt HOME</a>
       {% endif %}
     </main>
     <footer>
