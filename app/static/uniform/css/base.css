@@ -5,36 +5,37 @@ a {
 }
 span.brand-title > span {
   font-family: sans-serif, helvetica;
-  font-size: 8em;
+  font-size: 5em;
   font-weight: bold;
   padding: 1rem;
 }
 span.brand-title span.multi {
-  color: rgb(0, 96, 181);
+  color: rgb(4, 19, 33);
   background-color: rgb(255, 238, 0);
 }
 span.brand-title span.threaded {
   color: rgb(255, 238, 0);
-  background-color: rgb(0, 96, 181);
+  background-color: rgb(4, 19, 33);
 }
 nav {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 250px;
+  padding-left: 5px;
 }
 body {
   margin: 0;
   background-color: rgb(4, 19, 33);
-  margin-top: 25em;
+  margin-top: 15em;
 }
 header {
-  background-color: rgb(255, 238, 0);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-left: 10px solid rgb(255, 238, 0);
+  background-color: rgb(4, 19, 33);
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  height: 150px;
 }
 article {
   display: flex;
@@ -64,7 +65,7 @@ h6 {
 }
 a.home-top, a.home-bottom {
   color: #fff;
-  font-size: 5em;
+  font-size: 4em;
   font-family: sans-serif, helvetica;
   padding: 30px;
 }
