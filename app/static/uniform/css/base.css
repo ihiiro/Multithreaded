@@ -1,3 +1,12 @@
+/* global */
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+/* handle */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 238, 0);
+}
 /* articles and base.html */
 a {
   text-decoration: none;
@@ -153,5 +162,12 @@ div.index-bar > a {
   div.index-bar > a {
     font-size: 2em;
     margin-right: 2px;
+  }
+  article {
+    width: 60%;
+    font-size: 2em;
+  }
+  a.home-top, a.home-bottom {
+    font-size: 2em;
   }
 }
