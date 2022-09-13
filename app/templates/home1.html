@@ -8,18 +8,25 @@ computer science concepts.
 
 {% block content %}
 <div class="articles">
-  <!-- 1 -->
+  <!-- 1/5 -->
   <a href="{{ url_for('article', num=1) }}" class="article-wrapper">
     <div class="article" style="background-image: url('{{ url_for('static',
     filename='media/article1-banner.jpg') }}');">
       <h2 class="article-title">A theoretical introduction to Multithreading</h2>
     </div>
   </a>
-  <!-- 2 -->
+  <!-- 2/5 -->
   <a href="{{ url_for('article', num=2) }}" class="article-wrapper">
     <div class="article" style="background-image: url('{{ url_for('static',
     filename='media/article2-banner.jpg') }}');">
       <h2 class="article-title">An introduction to APIs</h2>
+    </div>
+  </a>
+  <!-- 3/5 -->
+  <a href="{{ url_for('article', num=3) }}" class="article-wrapper">
+    <div class="article" style="background-image: url('{{ url_for('static',
+    filename='media/article3-banner.jpg') }}');">
+      <h2 class="article-title">Blockchain and Cryptocurrency</h2>
     </div>
   </a>
 </div>

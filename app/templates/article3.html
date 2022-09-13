@@ -1,0 +1,68 @@
+{% extends 'uniform/base.html' %}
+
+{% block description %}Blockchain and Cryptocurrency, what are these?{% endblock %}
+
+{% block title %}Blockchain and Cryptocurrency{% endblock %}
+
+{% block content %}
+<article>
+  <h1>Blockchain and Cryptocurrency</h1>
+  <h6>By Yassir</h6>
+  <img src="{{ url_for('static', filename='media/article3-banner.jpg') }}" alt="A laptop with money on its keyboard">
+  <figcaption>pexels.com</figcaption>
+
+  <p>Blockchain is a type of Distributed Ledger Technology(DLT), using a Peer-to-Peer(P2P) network to maintain a decentralized method of keeping reliable information, and contrary to popular belief, Blockchain and Bitcoin are not the same thing, cryptocurrency and Blockchain do not mean the same thing, Blockchain is a type of database where instead of having a central database where all data is kept, it keeps data in a distributed fashion, meaning that the database itself is not on one central 'host' computer but on multiple computers, the computers in a network are usually referred to as nodes, so your phone is a node if it is connected to a computer network, due to the decentralized way in which Blockchain networks are implemented, no one node has an 'original' or 'main' database, all nodes on the network can have a copy of the entire Blockchain if they want that, in the case of a public or permissionless Blockchain anyone can join the network whereas in a private or permissioned Blockchain joining the network requires invitation.</p>
+
+  <p>A public Blockchain does not require any permissions, anyone can join the network and participate in it according to the Blockchain rules, a node can simply download a copy of the Blockchain and do whatever it wants, all nodes in a public Blockchain are equal but only in the general sense, there are of course node types which we'll cover later in the post, any node can - if it wants to - convert to any type, but the function of a node is limited by it's type.</p>
+
+  <p>A private Blockchain requires an invitation to enter, in this type of Blockchain not all nodes are equal, some nodes have permission to execute functions that other nodes do not have permission to do.</p>
+
+  <p>Keeping important data can be done in so many other ways that are so much more straighforward than Blockchain, a simple file or a SQL database are enough to keep important data, in both cases the files can be copied on multiple devices so that if data is lost on one device it can be found on another. But what if the data is so important that it should be kept in a way that is substantially more complicated and elaborate, what if what we are talking about is something that should not be changed? should never be deleted?, this is precisely why Blockchains exist, they keep a record of information that does not exist in only one place but in several at the same time, no only that but all those copies of it are updated all the time as new data is written into it.  Let's say that you and me and a thousand others all have computers and phones connected to the same Blockchain network, and let's say that the purpose of this Blockchain is to keep a record of who is to receive $100,000 this month, we all agree that this month's recipient is jane123, so each one of us writes a block into our copy of the chain containing the name 'jane123', suppose that one of us no longer wants to play by the rules and changes his copy by changing the name in the block to his name 'jhon71', jhon71 broadcasts the new copy to the rest of the network, the other nodes check this copy against theirs and conclude that they don't match, as long as the majority of the network has 'jane123' in their copy and as long as the majority is honest and plays by the rules, then jane123 has nothing to fear and will receive it's reward this month.</p>
+
+  <p>In this configuration the malicious node must aquire atleast 51% of the network's nodes in order to change this month's agreed upon winner. And this is essentially the basic idea behind Blockchain, a distributed and decentralized database where the only copy seen as honest is the one the majority of the nodes have. But Blockchain of course is more secure than this, most Blockchains use one of the two most popular consensus protocols(or algorithms): Proof-of-Work(PoW) and Proof-of-Stake(PoS), PoW being the one used by the cryptocurrency Bitcoin at the time of this writing, PoS will be used by Ethereum soon in place of PoW.</p>
+
+  <p>Proof-of-Work(PoW) is a consensus algorithm that was designed initially to deter spam emails and denial-of-service(DOS) attacks, it required the attacker to perform a PoW, the work being CPU power expended, due to the nature of these attacks being repetitive, the attacker node is required to solve a hashing problem that is hard but not impossible to solve for every email sent or DOS request, the attacker's computer will spend little time doing the work due to how fast computers are, but the cumulative PoWs will cost the attacker in both energy(electricity to power the device) as well as time because it will take longer for these attacks to be finished. The hashing problem is made in a way that it is hard to solve but easy to check by the recipient's computer.</p>
+
+  <p>Satoshi Nakamoto, the creator of Bitcoin, proposed solving the double-spending problem which is an issue that is unavoidable when dealing with digital files, they can be copied ad infinitum, the digital coins can easily be copied and spent twice or more times by the same person therefore reducing the currency's value and causing inflation in the system. The solution he suggested is each mining node is required to do a PoW similar to the one we talked about, the mining node(the node doing the PoW for adding a new block to the chain) is required to solve a hashing problem using bruteforce, when the mining node solves the hashing problem, it broadcasts the block and the block gets verified by the other nodes on the network, if the majority of the network accepts the block then it is added to the chain and the miners start working on a new block.</p>
+
+  <p>There are two main types of nodes in a Blockchain network, full-nodes and lightweight(or partial)-nodes, full nodes can either be pruned-full-nodes or archieval-full-nodes, pruned-full-nodes are mining nodes that only download a chunk of the Blockchain, they only reserve a limited amount of storage for the Blockchain copy and so they keep only the 'block-headers' for older blocks in the chain so that the more recent blocks have space on their storage. archieval-full-nodes have a copy of the entire Blockchain and they too can mine (hence the 'full'). Partial-nodes however do not store a copy of the Blockchain and they simply serve Simple Payment Verification(SPV), that is they make coin transactions in the case of cryptocurrency based Blockchains, keep a crypto wallet, and because they do not have a Blockchain copy they must connect to a full node to exchange information, also partial-nodes are incapable of mining because they do not have a Blockchain copy.</p>
+
+  <p>Full-nodes form the backbone of Bitcoin's Blockchain, they are online 24/7 working on mining(doing PoW) for the blocks they are building. The mining process goes as follows:</p>
+
+  <p>1) the Bitcoin Blockchain contains alot of traffic that is mainly Bitcoin transactions, whenever a node makes a transaction it also adds to it a transaction fee(txn fee), this fee is added to the block's coinbase-transaction or generation-transaction that the miner node is building.</p>
+
+  <p>2) mining nodes start building a new block from the network traffic(the transactions), the first transaction in the block is the coinbase-transaction and in it is a sort of a payment to self transaction from nowhere, it contains a predefined amount of BTCs(bitcoins) + the transaction fees, then it continues adding more transactions to the block - the main 'payload'.</p>
+
+  <p>3) once it is done building the block, it double-hashes the transactions into a Merkel Tree which is a hash data-structure, assume that (a, b, c ,d) are transactions and (a) is the coinbase-transaction and dhash() a double hashing function in this code-like explanation:</p>
+
+  <code>
+  d1 = dhash(a)
+  <br>
+  d2 = dhash(b)
+  <br>
+  d3 = dhash(c)
+  <br>
+  d4 = dhash(d)
+  <br>
+  // then
+  <br>
+  d5 = dhash(d1+d2)
+  <br>
+  d6 = dhash(d3+d4)
+  <br>
+  // then
+  <br>
+  d7 = dhash(d5+d6)
+  </code>
+
+  <p>d7 is called a Merkel Root because it has been double-hashed from all the other double hashes, furthermore if this code were to be interpreted as a tree it would have d7 at the top and that's where the tree interpretation comes from.</p>
+
+  <p>4) the mining node now takes the Merkel Root and appends a nonce(number only used once) to it which is typically initialized to 0, it hashes the combination and checks whether the resulting number is less than or equal to the target, the target value in the Bitcoin Blockchain is a number, the higher it is the easier the work, the lower the harder the work, the target is also adjusted automatically to maintain a rate of 1block/10minutes, meaning that 1 block can be added to the chain every 10 minutes. If the mining node fails at the first attempt it increments the nonce and makes another attempt, and once it finds the target hash it broadcasts the block to the rest of the network, other full nodes check the PoW and if the majority agree on that the block satisfies the condition, it is added to the chain and the miner node gets the rewards.</p>
+
+  <p>Proof-of-Stake(PoS) is another consensus algorithm used in Blockchain, in this algorithm there are staking nodes instead of mining nodes, the staking nodes 'stake' an amount of crypto(cryptocurrency) into the block they are building, this stake is considered collateral, the staking node broadcasts the block to other nodes, they too stake an amount of crypto into it. Eventually the block with the most stakes in it is added to the chain, and the staking nodes receive rewards in crypto that are higher than their collateral.</p>
+
+  <p>PoW requires alot of processing power, therefore it is wasteful in terms of energy and it detrimental to the environment, PoS doesn't require high computational power because there is no PoW in it. The Bitcoin Blockchain expends more electricity/year than a small country.</p>
+
+  <p>PoW is seen as more secure than PoS due to the latter tending more toward centralization because rich people can control the Blockchain if they aquire control over 51% of the network(the 51% attack) and therefore change the already existing blocks, whereas PoW protects the Blockchain by requiring a huge computational power to be expended to redo the PoW for the block a bad-actor wants to tamper with as well as the PoW for all subsequent blocks and do that in under 10 minutes which is computationally impossible after a number of blocks has already been added to the Blockchain.</p>
+</article>
+{% endblock %}
